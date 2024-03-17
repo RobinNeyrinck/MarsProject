@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mars 17: MarSolutions</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/main/main.css">
+    <link rel="stylesheet" href="assets/css/statistics/statistics.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/calculations.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/mental.js"></script>
+    <script src="assets/js/api.js"></script>
+</head>
+<body>
+
+<header>
+    <div id="header-images">
+        <img src="images/hamburgermenu.svg" alt="hamburgermenu" title="hamburgermenu">
+    </div>
+    <h1>Mental Statistics</h1>
+</header>
+<article class="hidden error">
+    <h2>An error occurred:</h2>
+</article>
+
+<nav id="overlay">
+    <ul>
+        <li>Home</li>
+        <li>Friends</li>
+        <li>Messages</li>
+        <li>Mental</li>
+        <li>Physical</li>
+    </ul>
+</nav>
+
+<main>
+    <div class="alerts-stats-container">
+        <article>
+            <h2>Mental Health Score</h2>
+            <div class="flex-container">
+                <div id="score-container">
+                    <div id="stats">
+                        <canvas id="piechart"></canvas>
+                    </div>
+                    <div id="score">
+                        <h4>/ 100</h4>
+                        <p>Your score is </p>
+                    </div>
+                </div>
+                <div>
+                    <p>Weekly score rating</p>
+
+                    <div id="daily-score">
+                        <p>Monday</p>
+                        <div class="skill-container">
+                            <div class="skills monday"></div>
+                        </div>
+                        <p>Tuesday</p>
+                        <div class="skill-container">
+                            <div class="skills tuesday"></div>
+                        </div>
+                        <p>Wednesday</p>
+                        <div class="skill-container">
+                            <div class="skills wednesday"></div>
+                        </div>
+                        <p>Thursday</p>
+                        <div class="skill-container">
+                            <div class="skills thursday"></div>
+                        </div>
+                        <p>Friday</p>
+                        <div class="skill-container">
+                            <div class="skills friday"></div>
+                        </div>
+                        <p>Saturday</p>
+                        <div class="skill-container">
+                            <div class="skills saturday"></div>
+                        </div>
+                        <p>Sunday</p>
+                        <div class="skill-container">
+                            <div class="skills sunday"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="alerts">
+            <h2>Alerts</h2>
+            <div>
+                <template>
+                    <div>
+                        <h3></h3>
+                        <p></p>
+                        <p><img src="" alt="" title="">
+                            <em></em></p></div>
+                </template>
+            </div>
+        </article>
+    </div>
+    <article>
+        <h2>Daily Overview</h2>
+        <div id="daily-overview">
+            <h3>Alpha waves</h3><img src="./images/alpha-waves.png" alt="alpha-waves" title="alpha-waves"><p>Motor functions</p>
+            <h3>Beta waves</h3><img src="./images/beta-waves.png" alt="beta-waves" title="beta-waves"><p>Normal, concentration/focus, waking stage</p>
+            <h3>Gamma waves</h3><img src="./images/gamma-waves.png" alt="gamma-waves" title="gamma-waves"><p>Relaxed, creative, learning</p>
+            <h3>Delta waves</h3><img src="./images/delta-waves.png" alt="delta-waves" title="delta-waves"><p>Sleep or meditation, creative</p>
+            <h3>Theta waves</h3><img src="./images/theta-waves.png" alt="theta-waves" title="theta-waves"><p>Deep sleep without any dreams</p>
+        </div>
+    </article>
+    <article id="general-info">
+        <h2>Basic Medical Info</h2>
+        <div class="flex-container">
+            <img src="#" alt="Your Avatar" title="Your Avatar">
+            <dl id="general-data">
+                <dt>Name:</dt>
+                <dd id="name"></dd>
+                <dt>Birthday:</dt>
+                <dd id="birthday"></dd>
+            </dl>
+        </div>
+    </article>
+</main>
+</body>
+</html>

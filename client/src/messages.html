@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mars 17: MarSolutions</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/main/main.css">
+    <link rel="stylesheet" href="assets/css/messages/messages.css">
+    <link rel="stylesheet" href="assets/css/messages/appointments.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.2/dist/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vertx/3.9.4/vertx-eventbus.min.js"></script>
+    <script src="assets/js/chatroom/eb.js"></script>
+    <script src="assets/js/chatroom/chatroom.js"></script>
+    <script src="assets/js/messages.js"></script>
+    <script src="assets/js/appointments.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/api.js"></script>
+</head>
+<body>
+<header>
+    <div id="header-images">
+        <img src="./images/hamburgermenu.svg" alt="hamburgermenu" title="hamburgermenu">
+    </div>
+    <h1>Messages</h1>
+</header>
+<article class="hidden error">
+    <h2>An error occurred:</h2>
+</article>
+<nav id="overlay">
+    <ul>
+        <li>Home</li>
+        <li>Friends</li>
+        <li>Messages</li>
+        <li>Mental</li>
+        <li>Physical</li>
+    </ul>
+</nav>
+<main>
+    <div id="friends-menu">
+        <div>
+            <input type="text" placeholder="Search for friend">
+        </div>
+        <aside>
+        </aside>
+    </div>
+    <div id="messages-menu">
+
+    </div>
+    <div id="appointment-form" class="hidden">
+        <div>
+            <form action="#" method="post" name="popup">
+                <h2>Do you want to make an appointment?</h2>
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Fill in the location">
+                <label for="date">Date</label>
+                <label for="time">Time</label>
+                <input type="date" id="date" name="date">
+                <input type="time" id="time" name="time">
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description" placeholder="Describe the appointment">
+                <input type="submit" value="Submit Appointment">
+                <input type="button" id="cancel-appointment" value="Cancel Appointment">
+            </form>
+        </div>
+    </div>
+</main>
+</body>
+</html>

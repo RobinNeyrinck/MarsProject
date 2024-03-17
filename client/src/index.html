@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mars 17: MarSolutions</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/main/main.css">
+    <link rel="stylesheet" href="assets/css/home/home.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/home.js"></script>
+</head>
+<body>
+<header>
+    <div id="header-images">
+        <img src="./images/hamburgermenu.svg" alt="hamburgermenu" title="hamburgermenu">
+    </div>
+    <h1>Home</h1>
+</header>
+<article class="hidden error">
+    <h2>An error occurred:</h2>
+</article>
+<nav id="overlay">
+    <ul>
+        <li>Home</li>
+        <li>Friends</li>
+        <li>Messages</li>
+        <li>Mental</li>
+        <li>Physical</li>
+    </ul>
+</nav>
+
+<main>
+    <article>
+        <h2>Friends in need</h2>
+        <div id="friends-in-need" class="no-border"></div>
+    </article>
+    <article id="steps">
+        <div class="container">
+            <canvas id="doughnut-chart"></canvas>
+        </div>
+        <div id="step-data">
+            <h2>Steps</h2>
+        </div>
+    </article>
+    <article id="appointments">
+        <h2>Appointments</h2>
+        <div class="no-border">
+            <template>
+                <div>
+                    <h3></h3>
+                    <p></p>
+                    <p><img src="" alt="" title="">
+                        <em></em></p>
+                </div>
+            </template>
+        </div>
+    </article>
+    <article>
+        <h2>Notifications</h2>
+        <div id="notifications" class="no-border"></div>
+    </article>
+</main>
+</body>
+</html>

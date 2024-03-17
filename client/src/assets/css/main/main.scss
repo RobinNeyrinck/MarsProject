@@ -1,0 +1,127 @@
+@use '../colors';
+@use '../functions';
+
+body {
+  background-color: colors.$primary-color-light;
+  color: black;
+  font-family: "Roboto Light", Arial, sans-serif;
+  font-size: 1rem;
+}
+
+button {
+  @include functions.borderWithPaddingAndRadius(1px);
+  background-color: white;
+  margin-top: 1rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+header {
+  display: grid;
+  padding: 1rem;
+  background-color: colors.$primary-color-dark;
+  grid-template-areas: "imgs . . . . . h1 . . . . button";
+  height: 3rem;
+
+  h1 {
+    font-size: 2rem;
+    color: colors.$primary-color-lightest;
+    align-self: center;
+    grid-area: h1;
+  }
+
+  button {
+    justify-self: right;
+    margin: 0;
+    grid-area: button;
+  }
+
+  #header-images {
+    display: flex;
+    align-items: center;
+    grid-area: imgs;
+
+    img[alt="hamburgermenu"] {
+      width: 2rem;
+    }
+
+    img[alt="return"] {
+      margin-left: 1rem;
+      height: 2.5rem;
+    }
+  }
+}
+
+main {
+  padding: 1rem;
+}
+
+#friends {
+  width: 7.5rem;
+  background-color: colors.$primary-color-lightest;
+  padding: 1rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 1.5rem 0;
+  overflow-y: auto;
+  height: 130vh;
+
+  img {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+  }
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 15%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: colors.$primary-color-dark;
+  border-right: solid 1px colors.$primary-color-lightest;
+
+  ul {
+    text-align: center;
+
+    li {
+      padding: 1.5rem;
+      border-bottom: solid 1px colors.$primary-color-lightest;
+      font-size: 1.5rem;
+      color: colors.$primary-color-lightest;
+    }
+  }
+}
+
+article {
+  background-color: colors.$primary-color-lightest;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  margin: 1.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+input, button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-bottom: 0;
+}

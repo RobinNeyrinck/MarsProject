@@ -1,0 +1,127 @@
+@use '../colors';
+@use '../functions';
+
+
+main {
+  display: flex;
+  justify-content: space-between;
+
+  div#friends-menu {
+    flex-basis: 20%;
+    margin: 1.5rem;
+    overflow-y: auto;
+    height: 80%;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem;
+
+      input {
+        width: 80%;
+        @include functions.borderWithPaddingAndRadius(1px);
+        background-color: white;
+      }
+    }
+
+    img {
+      width: 20%;
+      height: 3rem;
+      border-radius: 50%;
+      margin-right: 1rem;
+    }
+
+    aside {
+      height: 70vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      article {
+        display: flex;
+        width: 80%;
+        @include functions.borderWithPaddingAndRadius(1px);
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+      }
+    }
+  }
+
+  div#messages-menu {
+    background-color: colors.$primary-color-lightest;
+    flex-basis: 75%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    margin: 1.5rem;
+
+    div#header {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid colors.$primary-color-dark;
+
+      img {
+        width: 5%;
+      }
+
+      h2 {
+        align-self: center;
+        font-size: 2rem;
+      }
+    }
+
+    div#messages-screen {
+
+      div#messages {
+        overflow-y: auto;
+        height: 60vh;
+
+        #no-messages {
+          padding-top: 3rem;
+          align-self: center;
+          text-transform: uppercase;
+          font-size: 1.5rem;
+          text-align: center;
+        }
+
+        .outgoing {
+          background-color: colors.$primary-color-light;
+          @include functions.borderWithPaddingAndRadius(2px);
+          margin: 0.5rem;
+          text-align: right;
+        }
+
+        .incoming {
+          background-color: colors.$primary-color;
+          @include functions.borderWithPaddingAndRadius(2px);
+          margin: 0.5rem;
+        }
+      }
+
+      form {
+        width: 100%;
+
+        input[type="text"] {
+          width: 85%;
+          @include functions.borderWithPaddingAndRadius(1px);
+          background-color: white;
+        }
+
+        input[type="submit"] {
+          width: 10%;
+          @include functions.borderWithPaddingAndRadius(1px);
+          background-color: white;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

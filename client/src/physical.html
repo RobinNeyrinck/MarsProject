@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mars 17: MarSolutions</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/main/main.css">
+    <link rel="stylesheet" href="assets/css/statistics/statistics.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/physical.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/api.js"></script>
+</head>
+<body>
+
+<header>
+    <div id="header-images">
+        <img src="images/hamburgermenu.svg" alt="hamburgermenu" title="hamburgermenu">
+    </div>
+    <h1>Physical Statistics</h1>
+</header>
+<article class="hidden error">
+    <h2>An error occurred:</h2>
+</article>
+<nav id="overlay">
+    <ul>
+        <li>Home</li>
+        <li>Friends</li>
+        <li>Messages</li>
+        <li>Mental</li>
+        <li>Physical</li>
+    </ul>
+</nav>
+
+<main>
+    <div class="alerts-stats-container">
+        <article>
+            <h2>Physical Health Score</h2>
+            <div class="flex-container">
+                <div id="score-container">
+                    <div id="stats">
+                        <canvas id="piechart"></canvas>
+                    </div>
+                    <div id="score">
+                        <h4>/ 100</h4>
+                        <p>Your score is </p>
+                    </div>
+                </div>
+                <div id="daily-score">
+                    <h3>Weekly score rating</h3>
+                    <p>Monday</p>
+                    <div class="skill-container">
+                        <div class="skills monday"></div>
+                    </div>
+                    <p>Tuesday</p>
+                    <div class="skill-container">
+                        <div class="skills tuesday"></div>
+                    </div>
+                    <p>Wednesday</p>
+                    <div class="skill-container">
+                        <div class="skills wednesday"></div>
+                    </div>
+                    <p>Thursday</p>
+                    <div class="skill-container">
+                        <div class="skills thursday"></div>
+                    </div>
+                    <p>Friday</p>
+                    <div class="skill-container">
+                        <div class="skills friday"></div>
+                    </div>
+                    <p>Saturday</p>
+                    <div class="skill-container">
+                        <div class="skills saturday"></div>
+                    </div>
+                    <p>Sunday</p>
+                    <div class="skill-container">
+                        <div class="skills sunday"></div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="alerts">
+            <h2>Alerts</h2>
+            <div>
+                <template>
+                    <div>
+                        <h3></h3>
+                        <p></p>
+                        <p><img src="" alt="" title="">
+                            <em></em></p></div>
+                </template>
+            </div>
+        </article>
+    </div>
+    <article>
+        <h2>Daily Overview</h2>
+        <div id="physical-overview">
+            <div id="heart">
+                <h3>Heart</h3>
+                <div class="flex-container">
+                    <article id="ideal">
+                        <h4>Ideal</h4>
+                        <p>50-80 bpm in rest</p>
+                    </article>
+                    <article id="personal">
+                        <h4>You</h4>
+                    </article>
+                </div>
+                <canvas id="heart-rate-graph"></canvas>
+            </div>
+            <div id="blood-measurements">
+                <h3>Blood measurements</h3>
+                <canvas id="line-chart"></canvas>
+            </div>
+            <div id="steps">
+                <h3>Steps</h3>
+                <div class="grid-container">
+                    <div id="footsteps">
+                        <img src="./images/footsteps.svg" alt="footsteps" title="footsteps" style="width: 2rem">
+                    </div>
+                    <div id="speed">
+                        <img src="./images/speedometer.svg" alt="speedometer" title="speedometer" style="width: 2rem">
+                    </div>
+                    <div id="steps-chart">
+                        <canvas id="steps-pie-chart"></canvas>
+                        <div id="progress"></div>
+                    </div>
+                    <div id="distance">
+                        <img src="./images/path-distance.svg" alt="distance" title="distance" style="width: 2rem">
+                    </div>
+                    <div id="stairs">
+                        <img src="./images/stairs.svg" alt="stairs" title="stairs" style="width: 2rem">
+                    </div>
+                </div>
+            </div>
+            <div id="blood-test-data">
+                <h3>Blood Test Data</h3>
+                <div id="data">
+                    <template>
+                        <div class="blood-sugar-pressure-date"><p></p>
+                            <div class="blood-sugar-pressure">
+                                <div class="blood-sugar">
+                                    <p></p>
+                                    <p></p>
+                                </div>
+                                <div class="blood-pressure">
+                                    <p></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <div id="stress-measurements">
+                <h3>Stress Level</h3>
+                <ol id="stress-scores">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                </ol>
+                <div id="stress-message"></div>
+            </div>
+            <div id="calories">
+                <h3>Calories</h3>
+                <p>Breakfast</p>
+                <div id="breakfast" class="flex-container">
+                    <div class="flex-box">
+                        <p>Carbs</p>
+                        <div class="block">
+                            <div class="coloured"></div>
+                        </div>
+                    </div>
+                    <div class="flex-box">
+                        <p>Proteins</p>
+                        <div class="block">
+                            <div class="coloured"></div>
+                        </div>
+                    </div>
+                    <div class="flex-box">
+                        <p>Fat</p>
+                        <div class="block">
+                            <div class="coloured"></div>
+                        </div>
+                    </div>
+                </div>
+                <p>Lunch</p>
+                <div id="lunch" class="flex-container">
+                    <div class="flex-box">
+                        <p>Carbs</p>
+                        <div class="block">
+                            <div class="coloured"></div>
+                        </div>
+                    </div>
+                    <div class="flex-box">
+                        <p>Proteins</p>
+                        <div class="block">
+                            <div class="coloured"></div>
+                        </div>
+                    </div>
+                    <div class="flex-box">
+                        <p>Fat</p>
+                        <div class="block">
+                            <div class="coloured"></div>
+                        </div>
+                    </div>
+                </div>
+                <p>Dinner</p>
+                <div id="dinner" class="flex-container">
+                    <div class="flex-box">
+                        <p>Carbs</p>
+                        <div class="block">
+                            <div class="coloured"></div>
+                        </div>
+                    </div>
+                    <div class="flex-box">
+                        <p>Proteins</p>
+                        <div class="block">
+                            <div class="coloured"></div>
+                        </div>
+                    </div>
+                    <div class="flex-box">
+                        <p>Fat</p>
+                        <div class="block">
+                            <div class="coloured"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article id="general-info">
+        <h2>Basic Medical Info</h2>
+        <div class="flex-container">
+            <dl>
+                <dt>Name:</dt>
+                <dd id="name"></dd>
+                <dt>Birthday:</dt>
+                <dd id="birthday"></dd>
+                <dt>Gender:</dt>
+                <dd id="gender"></dd>
+            </dl>
+            <dl>
+                <dt>Age:</dt>
+                <dd id="age"></dd>
+                <dt>Height:</dt>
+                <dd id="height"></dd>
+                <dt>Weight:</dt>
+                <dd id="weight"></dd>
+                <dt>Blood Type:</dt>
+                <dd id="blood-type"></dd>
+                <dt>Allergies:</dt>
+                <dd id="allergies"></dd>
+                <dt>Genetic-diseases:</dt>
+                <dd id="genetic-diseases"></dd>
+                <dt>Chronic diseases:</dt>
+                <dd id="chronic-diseases"></dd>
+            </dl>
+        </div>
+    </article>
+</main>
+</body>
+</html>

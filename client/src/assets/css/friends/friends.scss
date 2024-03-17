@@ -1,0 +1,137 @@
+@use '../colors';
+@use '../functions';
+
+main {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  #flex-container {
+    flex-basis: 89%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    img {
+      width: 1.5rem;
+    }
+  }
+
+  #find-friend, #overview {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+  }
+
+  form {
+    display: inline;
+
+    input {
+      width: 95%;
+      @include functions.borderWithPaddingAndRadius(2px);
+    }
+  }
+
+  #overview-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    h2 {
+      padding: 0.1rem;
+    }
+
+    div:not(#best-and-worst) {
+      margin: 0.75rem;
+      flex-basis: 44%;
+      @include functions.borderWithPaddingAndRadius(2px);
+    }
+
+    #best-and-worst{
+      flex-basis: 44%;
+      display: flex;
+      flex-flow: column nowrap;
+
+      div {
+        width: 89%;
+      }
+
+      p{
+        text-align: center;
+      }
+    }
+
+    #recommendations ul {
+      list-style: disc;
+      padding-left: 1rem;
+      line-height: 1.5rem;
+    }
+
+    #best-score, #worst-score {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  #alerts{
+    width: 42%;
+
+    div {
+
+      div {
+        height: auto;
+        margin: 0.75rem;
+        @include functions.borderWithPaddingAndRadius(2px);
+      }
+    }
+  }
+
+  #appointments{
+    width: 42%;
+
+    div {
+
+      div {
+        height: auto;
+        margin: 0.75rem;
+        @include functions.borderWithPaddingAndRadius(2px);
+      }
+
+      p {
+        line-height: 1.3rem;
+      }
+
+      em {
+        margin-top: 1rem;
+        font-style: italic;
+        font-size: 0.8rem;
+      }
+
+      img[alt="location"] {
+        height: 0.8rem;
+      }
+    }
+  }
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+.succes-message {
+  color: green;
+  font-weight: bold;
+}

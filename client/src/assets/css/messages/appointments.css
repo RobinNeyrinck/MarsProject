@@ -1,0 +1,59 @@
+#appointment-form div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0.95;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: #D5DBE4;
+  overflow: auto;
+}
+#appointment-form div form {
+  max-width: 300px;
+  min-width: 250px;
+  padding: 10px 50px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  font-family: raleway, Arial, sans-serif;
+  background-color: #7288A7;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#appointment-form div form label {
+  padding: 0.5rem;
+}
+#appointment-form div form input {
+  margin: 0.5rem;
+}
+#appointment-form div form #participants, #appointment-form div form #location, #appointment-form div form #description {
+  width: 100%;
+}
+#appointment-form div form label[for=time], #appointment-form div form label[for=date] {
+  width: 35%;
+}
+#appointment-form div form #date, #appointment-form div form #time {
+  width: 35%;
+}
+#appointment-form div form input {
+  border: 1px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: white;
+}
+#appointment-form div form input[type=submit], #appointment-form div form input[type=button] {
+  border: 1px #061B39 solid;
+  padding: 0.25rem;
+  border-radius: 5px;
+  background-color: white;
+}
+#appointment-form div form input[type=submit]:hover, #appointment-form div form input[type=button]:hover {
+  cursor: pointer;
+  background-color: #061B39;
+  color: white;
+}
+
+/*# sourceMappingURL=appointments.css.map */

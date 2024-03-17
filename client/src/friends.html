@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mars 17: MarSolutions</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/main/main.css">
+    <link rel="stylesheet" href="assets/css/friends/friends.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/friends.js"></script>
+    <script src="assets/js/api.js"></script>
+</head>
+<body>
+<header>
+    <div id="header-images">
+        <img src="images/hamburgermenu.svg" alt="hamburgermenu" title="hamburgermenu">
+    </div>
+    <h1>Friends</h1>
+</header>
+<article class="hidden error">
+    <h2>An error occurred:</h2>
+</article>
+
+<nav id="overlay">
+    <ul>
+        <li>Home</li>
+        <li>Friends</li>
+        <li>Messages</li>
+        <li>Mental</li>
+        <li>Physical</li>
+    </ul>
+</nav>
+
+<main>
+    <aside id="friends"></aside>
+    <div id="flex-container">
+        <article id="find-friend">
+            <h2>Add a new friend</h2>
+            <form>
+                <input type="text" id="friend-name" placeholder="Firstname Lastname">
+            </form>
+            <img src="images/search.svg" alt="Search">
+        </article>
+        <article id="overview">
+            <h2>Overview</h2>
+            <div id="overview-flex">
+                <div class="chart">
+                    <h2>Overall score of all the friends</h2>
+                    <canvas id="line-chart"></canvas>
+                </div>
+                <div id="best-and-worst">
+                    <div id="best-score">
+                        <p></p>
+                    </div>
+                    <div id="worst-score">
+                        <p></p>
+                    </div>
+                </div>
+                <div id="recommendations">
+                    <h2>How to improve the health of you and your friends</h2>
+                    <ul></ul>
+                </div>
+            </div>
+        </article>
+        <article id="alerts">
+            <h2>Alerts</h2>
+            <div>
+                <template>
+                    <div>
+                        <h3></h3>
+                        <p></p>
+                        <p><img src="" alt="" title="">
+                            <em></em></p></div>
+                </template>
+            </div>
+        </article>
+        <article id="appointments">
+            <h2>Appointments</h2>
+            <div>
+                <template>
+                    <div>
+                        <h3></h3>
+                        <p></p>
+                        <p><img src="" alt="" title="">
+                            <em></em></p>
+                    </div>
+                </template>
+            </div>
+        </article>
+    </div>
+</main>
+</body>
+</html>

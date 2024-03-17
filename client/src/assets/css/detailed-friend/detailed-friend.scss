@@ -1,0 +1,92 @@
+@use '../colors';
+@use '../functions';
+
+main {
+  display: flex;
+  justify-content: space-between;
+
+  #friends {
+    height: 102vh;
+  }
+
+  #flex-container {
+    flex-basis: 89%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    article {
+      flex-basis: 42%;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    .health-overview {
+      display: flex;
+      justify-content: space-between;
+
+      .weekly-scores {
+        width: 40%;
+
+        p {
+          display: inline-block;
+        }
+
+        .skill-container {
+          display: inline-block;
+          width: 100%;
+          background-color: #ddd;
+
+          .skills {
+            text-align: right;
+            padding-top: 10px;
+            padding-right: 0.5rem;
+            padding-bottom: 10px;
+            color: white;
+            background-color: colors.$primary-color-dark;
+          }
+        }
+      }
+
+      #mental-score, #physical-score {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+
+        #mental-progress, #physical-progress {
+          position: absolute;
+          text-align: center;
+
+          h3, h4 {
+            font-size: 3rem;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .feedback {
+        @include functions.borderWithPaddingAndRadius(2px);
+      }
+
+      .weekly-scores {
+        @include functions.borderWithPaddingAndRadius(2px);
+
+        li {
+          margin: 0.25rem;
+        }
+      }
+    }
+
+    #activities, #alerts {
+      ul li {
+        @include functions.borderWithPaddingAndRadius(2px);
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+

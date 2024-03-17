@@ -1,0 +1,68 @@
+@use '../colors';
+@use '../functions';
+
+#appointment-form {
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    opacity: .95;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: colors.$possible-background-color;
+    overflow: auto;
+
+    form {
+      max-width: 300px;
+      min-width: 250px;
+      padding: 10px 50px;
+      border: 2px solid gray;
+      border-radius: 10px;
+      font-family: raleway, Arial, sans-serif;
+      background-color: colors.$primary-color-light;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      label {
+        padding: 0.5rem;
+      }
+
+      input {
+        margin: 0.5rem;
+      }
+
+      #participants, #location, #description {
+        width: 100%;
+      }
+
+      label[for="time"], label[for="date"] {
+        width: 35%;
+      }
+
+      #date, #time {
+        width: 35%;
+      }
+
+      input {
+        @include functions.borderWithPaddingAndRadius(1px);
+        background-color: white;
+      }
+
+      input[type="submit"], input[type="button"] {
+        @include functions.borderWithPaddingAndRadius(1px, 0.25rem);
+        background-color: white;
+
+        &:hover {
+          cursor: pointer;
+          background-color: colors.$primary-color-dark;
+          color: white;
+        }
+      }
+    }
+  }
+}

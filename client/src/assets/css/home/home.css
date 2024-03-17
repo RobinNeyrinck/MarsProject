@@ -1,0 +1,60 @@
+main {
+  display: flex;
+  flex-flow: row wrap;
+}
+main article:not(#steps) {
+  width: 42%;
+}
+main article:not(#steps) h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+main article:not(#steps) div:not(.no-border) {
+  border: 2px #061B39 solid;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+main article:not(#steps) div:not(.no-border) h3 {
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+}
+main article:not(#steps) div:not(.no-border) p {
+  line-height: 1.3rem;
+}
+main article:not(#steps) div:not(.no-border) em {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+main article:not(#steps) div:not(.no-border) img[alt=location] {
+  height: 0.8rem;
+}
+main #steps {
+  border: none;
+  background-color: #7288A7;
+  width: 42%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #steps .container {
+  width: 50%;
+  position: relative;
+}
+main #steps #step-data {
+  position: absolute;
+  text-align: center;
+}
+main #steps #step-data p {
+  font-size: 1.2rem;
+}
+main #steps #step-data h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+main #steps #step-data strong {
+  font-size: 3rem;
+}
+
+/*# sourceMappingURL=home.css.map */

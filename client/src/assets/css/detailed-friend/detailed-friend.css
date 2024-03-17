@@ -1,0 +1,78 @@
+main {
+  display: flex;
+  justify-content: space-between;
+}
+main #friends {
+  height: 102vh;
+}
+main #flex-container {
+  flex-basis: 89%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+main #flex-container article {
+  flex-basis: 42%;
+  margin-bottom: 1rem;
+}
+main #flex-container h2 {
+  margin-bottom: 1rem;
+}
+main #flex-container .health-overview {
+  display: flex;
+  justify-content: space-between;
+}
+main #flex-container .health-overview .weekly-scores {
+  width: 40%;
+}
+main #flex-container .health-overview .weekly-scores p {
+  display: inline-block;
+}
+main #flex-container .health-overview .weekly-scores .skill-container {
+  display: inline-block;
+  width: 100%;
+  background-color: #ddd;
+}
+main #flex-container .health-overview .weekly-scores .skill-container .skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-right: 0.5rem;
+  padding-bottom: 10px;
+  color: white;
+  background-color: #061B39;
+}
+main #flex-container .health-overview #mental-score, main #flex-container .health-overview #physical-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+main #flex-container .health-overview #mental-score #mental-progress, main #flex-container .health-overview #mental-score #physical-progress, main #flex-container .health-overview #physical-score #mental-progress, main #flex-container .health-overview #physical-score #physical-progress {
+  position: absolute;
+  text-align: center;
+}
+main #flex-container .health-overview #mental-score #mental-progress h3, main #flex-container .health-overview #mental-score #mental-progress h4, main #flex-container .health-overview #mental-score #physical-progress h3, main #flex-container .health-overview #mental-score #physical-progress h4, main #flex-container .health-overview #physical-score #mental-progress h3, main #flex-container .health-overview #physical-score #mental-progress h4, main #flex-container .health-overview #physical-score #physical-progress h3, main #flex-container .health-overview #physical-score #physical-progress h4 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+main #flex-container .health-overview .feedback {
+  border: 2px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+main #flex-container .health-overview .weekly-scores {
+  border: 2px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+main #flex-container .health-overview .weekly-scores li {
+  margin: 0.25rem;
+}
+main #flex-container #activities ul li, main #flex-container #alerts ul li {
+  border: 2px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/*# sourceMappingURL=detailed-friend.css.map */

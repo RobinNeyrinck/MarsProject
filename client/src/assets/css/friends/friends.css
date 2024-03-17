@@ -1,0 +1,116 @@
+main {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+main #flex-container {
+  flex-basis: 89%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+main #flex-container img {
+  width: 1.5rem;
+}
+main #find-friend, main #overview {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+main label {
+  display: block;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+}
+main form {
+  display: inline;
+}
+main form input {
+  width: 95%;
+  border: 2px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+main #overview-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+main #overview-flex h2 {
+  padding: 0.1rem;
+}
+main #overview-flex div:not(#best-and-worst) {
+  margin: 0.75rem;
+  flex-basis: 44%;
+  border: 2px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+main #overview-flex #best-and-worst {
+  flex-basis: 44%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+main #overview-flex #best-and-worst div {
+  width: 89%;
+}
+main #overview-flex #best-and-worst p {
+  text-align: center;
+}
+main #overview-flex #recommendations ul {
+  list-style: disc;
+  padding-left: 1rem;
+  line-height: 1.5rem;
+}
+main #overview-flex #best-score, main #overview-flex #worst-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #overview-flex #best-score p, main #overview-flex #worst-score p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+main #alerts {
+  width: 42%;
+}
+main #alerts div div {
+  height: auto;
+  margin: 0.75rem;
+  border: 2px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+main #appointments {
+  width: 42%;
+}
+main #appointments div div {
+  height: auto;
+  margin: 0.75rem;
+  border: 2px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+main #appointments div p {
+  line-height: 1.3rem;
+}
+main #appointments div em {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+main #appointments div img[alt=location] {
+  height: 0.8rem;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+.succes-message {
+  color: green;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=friends.css.map */

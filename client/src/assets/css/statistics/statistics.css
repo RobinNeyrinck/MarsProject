@@ -1,0 +1,240 @@
+main h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+main .alerts-stats-container article .flex-container div + div {
+  border: 2px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+  flex-basis: 45%;
+}
+main #daily-overview {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+main #daily-overview h3 {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+main #daily-overview img, main #daily-overview p {
+  width: 40%;
+  margin-bottom: 2rem;
+}
+main #daily-overview p {
+  border: 2px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #daily-overview img {
+  height: 6rem;
+}
+main article {
+  flex-basis: 45%;
+}
+main article .flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+main article .flex-container #score-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main article .flex-container #score-container div#score {
+  position: absolute;
+  text-align: center;
+  border: none;
+}
+main article .flex-container #score-container div#score em {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+main article .flex-container #daily-score p {
+  display: inline-block;
+  padding: 0.5rem 0;
+}
+main article .flex-container #daily-score .skill-container {
+  display: inline-block;
+  width: 100%;
+  background-color: #ddd;
+}
+main article .flex-container #daily-score .skill-container .skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-right: 0.5rem;
+  padding-bottom: 10px;
+  color: white;
+  background-color: #061B39;
+}
+main article .flex-container div#stats {
+  flex-basis: 45%;
+}
+main article .flex-container div#stats p {
+  border: 2px #061B39 solid;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+main article .flex-container img {
+  flex-basis: 40%;
+}
+main article .flex-container dl {
+  flex-basis: 50%;
+}
+main article #physical-overview {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+main article #physical-overview h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+main article #physical-overview #heart, main article #physical-overview #blood-measurements, main article #physical-overview #steps, main article #physical-overview #stress-measurements, main article #physical-overview #calories, main article #physical-overview #blood-test-data {
+  margin-top: 1rem;
+  flex-basis: 47%;
+  margin-bottom: 1rem;
+}
+main article #physical-overview #heart .flex-container article, main article #physical-overview #blood-measurements .flex-container article, main article #physical-overview #steps .flex-container article, main article #physical-overview #stress-measurements .flex-container article, main article #physical-overview #calories .flex-container article, main article #physical-overview #blood-test-data .flex-container article {
+  text-align: center;
+  border: 2px #061B39 solid;
+  padding: 1rem;
+  border-radius: 5px;
+}
+main article #physical-overview #heart img, main article #physical-overview #blood-measurements img, main article #physical-overview #steps img, main article #physical-overview #stress-measurements img, main article #physical-overview #calories img, main article #physical-overview #blood-test-data img {
+  justify-content: space-between;
+  width: 100%;
+}
+main article #physical-overview #heart .flex-container article {
+  margin: 0 1rem;
+}
+main article #physical-overview #heart #heart-rate-graph {
+  margin-top: 2rem;
+}
+main article #physical-overview #steps .grid-container {
+  display: grid;
+  grid-template-areas: "footsteps footsteps footsteps footsteps footsteps . . . . steps steps steps" "speed speed speed speed speed . . . . steps steps steps" "distance distance distance distance distance . . stairs stairs stairs stairs stairs";
+}
+main article #physical-overview #steps .grid-container #footsteps {
+  grid-area: footsteps;
+}
+main article #physical-overview #steps .grid-container #speed {
+  grid-area: speed;
+}
+main article #physical-overview #steps .grid-container #stairs {
+  grid-area: stairs;
+}
+main article #physical-overview #steps .grid-container #distance {
+  grid-area: distance;
+}
+main article #physical-overview #steps .grid-container div {
+  border: 2px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+main article #physical-overview #steps .grid-container #steps-chart {
+  grid-area: steps;
+  border: none;
+  padding: 0;
+  height: 10rem;
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main article #physical-overview #steps .grid-container #steps-chart #progress {
+  border: none;
+  position: absolute;
+  text-align: center;
+}
+main article #physical-overview #blood-test-data {
+  border: 1px #061B39 solid;
+  padding: 1rem;
+  border-radius: 5px;
+}
+main article #physical-overview #blood-test-data #data .blood-sugar-pressure {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+main article #physical-overview #blood-test-data #data .blood-sugar-pressure .blood-sugar, main article #physical-overview #blood-test-data #data .blood-sugar-pressure .blood-pressure {
+  border: 1px #061B39 solid;
+  padding: 1rem;
+  border-radius: 5px;
+  flex-basis: 40%;
+}
+main article #physical-overview #stress-measurements #stress-scores {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+}
+main article #physical-overview #stress-measurements #stress-scores .current-stress-level {
+  background-color: #061B39;
+  color: #F6F8FC;
+}
+main article #physical-overview #stress-measurements #stress-scores li {
+  background-color: #7288A7;
+  display: inline-block;
+  border: 1px #061B39 solid;
+  padding: 1rem;
+  border-radius: 5px;
+}
+main article #physical-overview #stress-measurements #stress-message {
+  margin-top: 2rem;
+  border: 2px #061B39 solid;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+main article #physical-overview #calories #breakfast, main article #physical-overview #calories #lunch, main article #physical-overview #calories #dinner {
+  border: 2px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+main article #physical-overview #calories #breakfast p, main article #physical-overview #calories #lunch p, main article #physical-overview #calories #dinner p {
+  writing-mode: horizontal-tb;
+}
+main article #physical-overview #calories #breakfast .flex-box, main article #physical-overview #calories #lunch .flex-box, main article #physical-overview #calories #dinner .flex-box {
+  flex-basis: 25%;
+}
+main article #physical-overview #calories #breakfast .block, main article #physical-overview #calories #lunch .block, main article #physical-overview #calories #dinner .block {
+  border: 1px #061B39 solid;
+  padding: 0;
+  border-radius: 0;
+}
+main .alerts-stats-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+}
+main .alerts-stats-container article#alerts {
+  flex-basis: 45%;
+}
+main .alerts-stats-container article#alerts div div {
+  border: 1px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+main .alerts-stats-container article#alerts div div img[alt=location] {
+  width: 1rem;
+}
+main #general-info img[alt="Your Avatar"] {
+  width: 0.5rem;
+}
+main #general-info dl {
+  margin-left: 2rem;
+}
+main #general-info dt {
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+
+/*# sourceMappingURL=statistics.css.map */

@@ -1,0 +1,722 @@
+openapi: 3.0.3
+info:
+  title: 'Mars Concept Title - Mars-17'
+  description: 'Description of the Mars API - Mars-17'
+  version: 0.0.1
+servers:
+  - url: https://project-ii.ti.howest.be/mars-17
+    description: 'Public API'
+  - url: http://localhost:8080/
+    description: 'Local API'
+
+tags:
+ - name: "Users"
+ - name: "Friends"
+ - name: "Medical Services"
+ - name: "Communication"
+
+paths:
+  /api/users:
+    get:
+      description: Get all users
+      operationId: getUsers
+      tags: 
+        - Users
+      responses:
+        "200":
+          description: Returned all users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/user"
+  /api/user:
+    get:
+      description: Get a specific user by identifier
+      operationId: getSpecificUser
+      tags:
+        - Users
+      parameters:
+        - in: query
+          name: userID
+          required: false
+          schema:
+            type: integer
+          description: The user id
+        - in: query
+          name: name
+          required: false
+          schema: 
+            type: string
+          description: The user name
+      responses:
+        "200":
+          description: Returned all users
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/user"
+
+  /api/users/{userID}/friends:
+    get:
+      description: Get a specific user's friends
+      operationId: getUserFriends
+      tags:
+        - Friends
+      parameters:
+        - in: path
+          name: userID
+          required: true
+          schema:
+            type: integer
+          description: The user id
+      responses:
+        "200":
+          description: Returned all friends
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/user"
+
+  /api/users/{userID}/friends/{friendID}:
+    get:
+      description: Get a users friend by ID
+      operationId: getUserFriendByID
+      tags:
+        - Friends
+      parameters:
+        - in: path
+          name: userID
+          required: true
+          schema:
+            type: integer
+          description: The user id
+        - in: path
+          name: friendID
+          required: true
+          schema:
+            type: integer
+          description: The friend's userID
+      responses:
+        "200":
+          description: Returned all friends
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/user"
+    post:
+      description: Add a friend
+      operationId: addFriend
+      tags:
+        - Friends
+      parameters:
+        - in: path
+          name: userID
+          required: true
+          schema:
+            type: integer
+          description: The user id
+        - in: path
+          name: friendID
+          required: true
+          schema:
+            type: integer
+          description: UserID of the friend
+      responses:
+        "201":
+          description: Added a friend
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/user"
+    delete:
+      description: Remove a friend
+      operationId: removeFriend
+      tags:
+        - Friends
+      parameters:
+        - in: path
+          name: userID
+          required: true
+          schema:
+            type: integer
+          description: The user id
+        - in: path
+          name: friendID
+          required: true
+          schema:
+            type: integer
+          description: The userID of your friend        
+      responses:
+        "204":
+          description: Removed a friend
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/user"
+  
+  /api/users/{userID}/messages/{friendID}:
+    get:
+      description: Get a specific user's inbox
+      operationId: getUserMessages
+      tags:
+        - Communication
+      parameters:
+        - in: path
+          name: userID
+          required: true
+          schema: 
+            type: integer
+          description: The user's ID
+        - in: path
+          name: friendID
+          required: true
+          schema:
+            type: integer
+          description: The friend's ID
+      responses:
+        "200":
+          description: Returned all messages between you and your friend
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/message"
+    post:
+      operationId: sendMessage 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+              required:
+                - message
+      description: Send a message
+      tags:
+        - Communication
+      parameters:
+        - in: path
+          name: userID
+          required: true
+          schema: 
+            type: integer
+          description: The user's ID
+        - in: path
+          name: friendID
+          required: true
+          schema:
+            type: integer
+          description: The friend's ID
+      responses:
+        "201":
+          description: Sent message
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/message"
+  /api/users/{userID}/appointments:
+    get:
+      description: Get a specific user's appointment
+      operationId: getUserAppointments
+      tags:
+        - Medical Services
+      parameters:
+        - in: path
+          name: userID
+          required: true
+          schema:
+            type: integer
+          description: The user id
+      responses:
+        "200":
+          description: Returned all appointments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/appointment"
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                datetime:
+                  type: string
+      description: Create an appointment
+      operationId: createAppointment
+      tags:
+        - Medical Services
+      parameters:
+        - in: path
+          name: userID
+          required: true
+          schema:
+            type: integer
+          description: The user id
+      responses:
+        "201":
+          description: Created an appointment
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/appointment"  
+  /api/users/{userID}/Medical:
+    get:
+      description: Get a specific user's medical sheet
+      operationId: getUserMedical
+      tags:
+        - Medical Services
+      parameters:
+        - in: path
+          name: userID
+          required: true
+          schema:
+            type: integer
+          description: The user id
+      responses:
+        "200":
+          description: Returned all medical statistics
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/medicaldata"
+
+  /api/users/Medical: 
+    get:
+      description: Get all users' medical information
+      operationId: getAllMedical
+      tags:
+        - Medical Services
+      responses:
+        "200":
+          description: Returned all users' medical information
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  "$ref": "#/components/schemas/medicaldata"
+
+
+  /api/users/{userID}/recommendations:
+    get:
+      description: Get a specific user's recommendations
+      operationId: getUserRecommendations
+      tags:
+        - Communication
+      parameters:
+        - in: path
+          name: userID
+          required: true
+          schema:
+            type: integer
+          description: The user id
+      responses:
+        "200":
+          description: Returned all recommendations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/recommendation"  
+  /api/users/{userID}/alerts:
+    get:
+      description: Get a specific user's alerts
+      operationId: getUserAlerts
+      tags:
+        - Communication
+      parameters:
+        - in: path
+          name: userID
+          required: true
+          schema:
+            type: integer
+          description: The user id
+      responses:
+        "200":
+          description: Returned all alerts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/alert"  
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                alerttype:
+                  type: string
+                urgency:
+                  type: integer
+                description:
+                  type: string
+
+      description: Send a new alert
+      operationId: sendAlertToUser
+      tags:
+        - Communication
+      parameters:
+        - in: path
+          name: userID
+          required: true
+          schema:
+            type: integer
+          description: The user id
+      responses:
+          "201":
+            description: Sent an alert
+            content:
+              application/json:
+                schema: 
+                  "$ref": "#/components/schemas/alert"  
+  /api/users/{userID}/measure:
+    post:
+      description: Create a new measurement
+      operationId: createMeasurement
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                datetime:
+                  type: string
+                value:
+                  type: number
+                footsteps:
+                  type: integer
+                caloriesburnt:
+                  type: integer
+                bloodsugarlevel:
+                  type: number
+                bloodpressure:
+                  type: number
+              required:
+                - type
+                - datetime
+                - value
+      parameters:
+        - in: path
+          name: userID
+          description: the user's id
+          required: true
+          schema: 
+            type: integer
+      tags:
+        - Medical Services
+      responses:
+        "201":
+          description: Created a new measurement
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - "$ref": "#/components/schemas/bloodmeasurement"
+                  - "$ref": "#/components/schemas/stressmeasurement"
+                  - "$ref": "#/components/schemas/caloriemeasurement"
+                  - "$ref": "#/components/schemas/hormonemeasurement"
+                  - "$ref": "#/components/schemas/heartratemeasurement"
+  /api/users/{userID}/subscribe:
+    post:
+      description: subscribe for notifications
+      operationId: subscribe
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keys:
+                  type: object
+                  properties:
+                    auth:
+                      type: string
+                    p256dh:
+                      type: string
+                  required:
+                    - auth
+                    - p256dh
+                endpoint:
+                  type: string
+              required:
+                - keys
+                - endpoint
+      parameters:
+        - in: path
+          name: userID
+          description: the user's id
+          required: true
+          schema: 
+            type: integer
+      tags:
+        - Communication
+      responses:
+        "201":
+          description: Subscribed
+          content:
+            application/json:
+              schema:
+                type: string
+
+
+  /api/users/{userID}/history:
+    get:
+      description: get a user's medical history
+      operationId: getUserHistory
+      parameters:
+        - in: path
+          name: userID
+          description: the user's id
+          required: true
+          schema: 
+            type: integer
+      tags:
+        - Out of scope
+      responses:
+        "200":
+          description: Subscribed
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  oneOf:
+                    - "$ref": "#/components/schemas/event"
+                    - "$ref": "#/components/schemas/incident"
+  /api/users/{userID}/periodcalender:
+    get:
+      description: get a user's period calender
+      operationId: getUserPeriodCalender
+      parameters:
+        - in: path
+          name: userID
+          description: the user's id
+          required: true
+          schema: 
+            type: integer
+      tags:
+        - Out of scope
+      responses:
+        "200":
+          description: Returned user's period calender
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/periodcalender"
+components:
+  schemas:
+    user:
+      type: object
+      required:
+        - "userID"
+      properties:
+        userID:
+          type: integer
+        firstname:
+          type: string
+        lastname:
+          type: string
+        profilepicture:
+          type: string
+    recommendation:
+      type: object
+      required:
+        - "recommendationID"
+      properties:
+        recommendationID:
+          type: integer
+        name:
+          type: string
+    appointment:
+      type: object
+      required:
+        - "appointmentID"
+      properties:
+        appointmentID:
+          type: integer
+        description:
+          type: string
+        date:
+          type: string
+    alert:
+      type: object
+      required:
+        - "alertID"
+      properties:
+        alertID:
+          type: integer
+        name:
+          type: string
+        urgency:
+          type: integer
+        description:
+          type: string
+    message:
+      type: object
+      required:
+        - "receiverID"
+        - "senderID"
+      properties:
+        receiverID:
+          type: integer
+        senderID:
+          type: integer
+        message:
+          type: string
+        timestamp:
+          type: string
+    medicaldata:
+      type: object
+      properties:
+        generaldata:
+          "$ref": "#/components/schemas/generalmedicaldata"
+        heartratemeasurements:
+          type: array
+          items:
+            "$ref": "#/components/schemas/heartratemeasurement"
+        bloodmeasurements:
+          type: array
+          items:
+            "$ref": "#/components/schemas/bloodmeasurement"
+        caloriemeasurements:
+          type: array
+          items:
+            "$ref": "#/components/schemas/caloriemeasurement"
+        stressmeasurements:
+          type: array
+          items:
+            "$ref": "#/components/schemas/stressmeasurement"
+        hormonemeasurements:
+          type: array
+          items:
+            "$ref": "#/components/schemas/hormonemeasurement"
+    generalmedicaldata:
+      type: object
+      properties:
+        birthday:
+          type: string
+        age:
+          type: integer
+        chronicdiseases:
+          type: string
+        geneticdiseases:
+          type: string
+        height:
+          type: number
+        weight:
+          type: number
+        bloodtype: 
+          type: string
+          enum:
+            - A+
+            - A-
+            - B+
+            - B-
+            - O+
+            - O-
+        allergies:
+          type: string
+        pregnant:
+          type: boolean
+          nullable: true
+        gender:
+          type: string
+          enum:
+            - male
+            - female
+            - other
+        healthscore:
+          type: array
+          items:
+            type: number
+    measurement:
+      type: object
+      properties:
+        datetime:
+          type: string
+        value:
+          type: number
+    heartratemeasurement:
+      allOf:
+        - "$ref": "#/components/schemas/measurement"
+    bloodmeasurement:
+      allOf:
+        - "$ref": "#/components/schemas/measurement"
+      properties:
+        bloodsugarlevel:
+            type: number
+        bloodpressure:
+            type: number
+    caloriemeasurement:
+      allOf:
+        - "$ref": "#/components/schemas/measurement"
+      properties:
+        footsteps:
+          type: integer
+        caloriesburnt:
+          type: integer
+    stressmeasurement:
+      allOf:
+        - "$ref": "#/components/schemas/measurement"
+    hormonemeasurement:
+      allOf:
+        - "$ref": "#/components/schemas/measurement"
+    periodcalender:
+      properties:
+        possiblestartdate:
+          type: string
+        possibleenddate:
+          type: string
+        actualstartdate:
+          type: string
+        actualenddate:
+          type: string
+        timeuntilnext:
+          type: number
+    event:
+      type: object
+      properties:
+        description:
+          type: string
+        datetime:
+          type: string
+    incident:
+      allOf:
+        - "$ref": "#/components/schemas/event"
+      properties:
+        injuries:
+          type: string
+        
+          
+
+        
+
+        

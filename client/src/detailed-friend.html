@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mars 17: MarSolutions</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/main/main.css">
+    <link rel="stylesheet" href="assets/css/detailed-friend/detailed-friend.css">
+    <link rel="stylesheet" href="assets/css/friends/friends.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/calculations.js"></script>
+    <script src="assets/js/detailed-friend.js"></script>
+    <script src="assets/js/return.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/friends.js"></script>
+    <script src="assets/js/api.js"></script>
+</head>
+<body>
+<header>
+    <div id="header-images">
+        <img src="images/hamburgermenu.svg" alt="hamburgermenu" title="hamburgermenu">
+        <img src="./images/arrow-left.svg" alt="return" title="return">
+    </div>
+    <h1 id="friend-name">'s Statistics</h1>
+    <button id="remove-friend">Remove friend</button>
+</header>
+<article class="hidden error">
+    <h2>An error occurred:</h2>
+</article>
+<nav id="overlay">
+    <ul>
+        <li>Home</li>
+        <li>Friends</li>
+        <li>Messages</li>
+        <li>Mental</li>
+        <li>Physical</li>
+    </ul>
+</nav>
+
+<main>
+    <aside id="friends">
+        <!-- friends section -->
+    </aside>
+    <div id="flex-container">
+        <article id="mental-health">
+            <h2>Mental health score</h2>
+            <div class="health-overview">
+                <div>
+                    <article id="mental-score">
+                        <div class="doughnut-chart-mental">
+                            <canvas class="doughnut-chart"></canvas>
+                        </div>
+                        <div id="mental-progress">
+                            <h4>0 / 100</h4>
+                            <p>Their score is </p>
+                        </div>
+                    </article>
+                </div>
+                <div class="weekly-scores">
+                    <p>Monday</p>
+                    <div class="skill-container">
+                        <div class="skills monday">90%</div>
+                    </div>
+                    <p>Tuesday</p>
+                    <div class="skill-container">
+                        <div class="skills tuesday">80%</div>
+                    </div>
+                    <p>Wednesday</p>
+                    <div class="skill-container">
+                        <div class="skills wednesday">65%</div>
+                    </div>
+                    <p>Thursday</p>
+                    <div class="skill-container">
+                        <div class="skills thursday">90%</div>
+                    </div>
+                    <p>Friday</p>
+                    <div class="skill-container">
+                        <div class="skills friday">90%</div>
+                    </div>
+                    <p>Saturday</p>
+                    <div class="skill-container">
+                        <div class="skills saturday">90%</div>
+                    </div>
+                    <p>Sunday</p>
+                    <div class="skill-container">
+                        <div class="skills sunday">90%</div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="physical-health">
+            <h2>Physical health score</h2>
+            <div class="health-overview">
+                <div>
+                    <article id="physical-score">
+                        <div class="doughnut-chart-physical">
+                            <canvas class="doughnut-chart"></canvas>
+                        </div>
+                        <div id="physical-progress">
+                            <h4>0 / 100</h4>
+                            <p>Their score is </p>
+                        </div>
+                    </article>
+                </div>
+                <div class="weekly-scores">
+                    <p>Monday</p>
+                    <div class="skill-container">
+                        <div class="skills monday">90%</div>
+                    </div>
+                    <p>Tuesday</p>
+                    <div class="skill-container">
+                        <div class="skills tuesday">80%</div>
+                    </div>
+                    <p>Wednesday</p>
+                    <div class="skill-container">
+                        <div class="skills wednesday">65%</div>
+                    </div>
+                    <p>Thursday</p>
+                    <div class="skill-container">
+                        <div class="skills thursday">90%</div>
+                    </div>
+                    <p>Friday</p>
+                    <div class="skill-container">
+                        <div class="skills friday">90%</div>
+                    </div>
+                    <p>Saturday</p>
+                    <div class="skill-container">
+                        <div class="skills saturday">90%</div>
+                    </div>
+                    <p>Sunday</p>
+                    <div class="skill-container">
+                        <div class="skills sunday">90%</div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="appointments">
+            <h2>Joint activities</h2>
+            <div>
+                <template>
+                    <div>
+                        <h3></h3>
+                        <p></p>
+                        <p><img src="" alt="" title="">
+                            <em></em></p>
+                    </div>
+                </template>
+            </div>
+        </article>
+        <article id="alerts">
+            <h2>Alerts</h2>
+            <div>
+                <template>
+                    <div>
+                        <h3></h3>
+                        <p></p>
+                        <p><img src="" alt="" title="">
+                            <em></em></p></div>
+                </template>
+            </div>
+        </article>
+    </div>
+</main>
+</body>
+</html>

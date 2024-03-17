@@ -1,0 +1,116 @@
+main {
+  display: flex;
+  justify-content: space-between;
+}
+main div#friends-menu {
+  flex-basis: 20%;
+  margin: 1.5rem;
+  overflow-y: auto;
+  height: 80%;
+}
+main div#friends-menu div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+main div#friends-menu div input {
+  width: 80%;
+  border: 1px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: white;
+}
+main div#friends-menu img {
+  width: 20%;
+  height: 3rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+main div#friends-menu aside {
+  height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+main div#friends-menu aside article {
+  display: flex;
+  width: 80%;
+  border: 1px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+main div#messages-menu {
+  background-color: #F6F8FC;
+  flex-basis: 75%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  margin: 1.5rem;
+}
+main div#messages-menu div#header {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #061B39;
+}
+main div#messages-menu div#header img {
+  width: 5%;
+}
+main div#messages-menu div#header h2 {
+  align-self: center;
+  font-size: 2rem;
+}
+main div#messages-menu div#messages-screen div#messages {
+  overflow-y: auto;
+  height: 60vh;
+}
+main div#messages-menu div#messages-screen div#messages #no-messages {
+  padding-top: 3rem;
+  align-self: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-align: center;
+}
+main div#messages-menu div#messages-screen div#messages .outgoing {
+  background-color: #7288A7;
+  border: 2px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin: 0.5rem;
+  text-align: right;
+}
+main div#messages-menu div#messages-screen div#messages .incoming {
+  background-color: #2C4770;
+  border: 2px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+main div#messages-menu div#messages-screen form {
+  width: 100%;
+}
+main div#messages-menu div#messages-screen form input[type=text] {
+  width: 85%;
+  border: 1px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: white;
+}
+main div#messages-menu div#messages-screen form input[type=submit] {
+  width: 10%;
+  border: 1px #061B39 solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: white;
+}
+main div#messages-menu div#messages-screen form input[type=submit]:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=messages.css.map */

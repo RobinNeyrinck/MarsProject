@@ -1,0 +1,7 @@
+@use 'colors';
+
+@mixin borderWithPaddingAndRadius($weight: 1px, $padding: 0.5rem, $radius: 5px) {
+  border: $weight colors.$primary-color-dark solid;
+  padding: $padding;
+  border-radius: $radius;
+}

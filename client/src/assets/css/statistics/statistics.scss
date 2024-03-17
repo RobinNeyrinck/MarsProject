@@ -1,0 +1,297 @@
+@use '../colors';
+@use '../functions';
+
+main {
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .alerts-stats-container article {
+    .flex-container{
+      div + div {
+        @include functions.borderWithPaddingAndRadius(2px);
+        flex-basis: 45%;
+      }
+    }
+  }
+
+  #daily-overview {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    h3 {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    img, p {
+      width: 40%;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      @include functions.borderWithPaddingAndRadius(2px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      height: 6rem;
+    }
+  }
+
+  article {
+    flex-basis: 45%;
+
+    .flex-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      #score-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div#score {
+          position: absolute;
+          text-align: center;
+          border: none;
+
+          em {
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      #daily-score{
+
+        p {
+          display: inline-block;
+          padding: 0.5rem 0;
+        }
+
+        .skill-container {
+          display: inline-block;
+          width: 100%;
+          background-color: #ddd;
+
+          .skills {
+            text-align: right;
+            padding-top: 10px;
+            padding-right: 0.5rem;
+            padding-bottom: 10px;
+            color: white;
+            background-color: colors.$primary-color-dark;
+          }
+        }
+      }
+
+      div#stats {
+        flex-basis: 45%;
+
+        p {
+          @include functions.borderWithPaddingAndRadius(2px, 1rem);
+          text-align: center;
+        }
+      }
+
+      img {
+        flex-basis: 40%;
+      }
+
+      dl {
+        flex-basis: 50%;
+      }
+    }
+
+    #physical-overview {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      #heart, #blood-measurements, #steps, #stress-measurements, #calories, #blood-test-data {
+        margin-top: 1rem;
+        flex-basis: 47%;
+        margin-bottom: 1rem;
+
+        .flex-container {
+
+          article {
+            text-align: center;
+            @include functions.borderWithPaddingAndRadius(2px, 1rem);
+          }
+        }
+
+        img {
+          justify-content: space-between;
+          width: 100%;
+        }
+      }
+
+      #heart {
+        .flex-container {
+          article {
+            margin: 0 1rem;
+          }
+        }
+
+        #heart-rate-graph{
+          margin-top: 2rem;
+        }
+      }
+
+      #steps{
+        .grid-container{
+          display: grid;
+          grid-template-areas: 'footsteps footsteps footsteps footsteps footsteps . . . . steps steps steps'
+                                'speed speed speed speed speed . . . . steps steps steps'
+                                'distance distance distance distance distance . . stairs stairs stairs stairs stairs';
+
+          #footsteps{
+            grid-area: footsteps;
+          }
+
+          #speed{
+            grid-area: speed;
+          }
+
+          #stairs{
+            grid-area: stairs;
+          }
+
+          #distance{
+            grid-area: distance;
+          }
+
+          div {
+            @include functions.borderWithPaddingAndRadius(2px);
+            margin-bottom: 1rem;
+          }
+
+          #steps-chart {
+            grid-area: steps;
+            border: none;
+            padding: 0;
+            height: 10rem;
+            width: 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            #progress {
+              border: none;
+              position: absolute;
+              text-align: center;
+            }
+          }
+        }
+      }
+
+      #blood-test-data{
+        @include functions.borderWithPaddingAndRadius(1px, 1rem);
+        #data{
+
+          .blood-sugar-pressure{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+
+            .blood-sugar, .blood-pressure{
+              @include functions.borderWithPaddingAndRadius(1px, 1rem);
+              flex-basis: 40%;
+            }
+          }
+        }
+      }
+
+      #stress-measurements{
+        #stress-scores{
+          display: flex;
+          justify-content: space-between;
+          flex-flow: row nowrap;
+
+          .current-stress-level{
+            background-color: colors.$primary-color-dark;
+            color: colors.$primary-color-lightest;
+          }
+
+          li{
+            background-color: colors.$primary-color-light;
+            display: inline-block;
+            @include functions.borderWithPaddingAndRadius(1px, 1rem);
+          }
+        }
+
+        #stress-message{
+          margin-top: 2rem;
+          @include functions.borderWithPaddingAndRadius(2px, 1rem);
+          text-align: center;
+        }
+      }
+
+      #calories {
+        #breakfast, #lunch, #dinner {
+          @include functions.borderWithPaddingAndRadius(2px);
+
+          p{
+            writing-mode: horizontal-tb;
+          }
+
+          .flex-box{
+            flex-basis: 25%;
+          }
+
+          .block{
+            @include functions.borderWithPaddingAndRadius(1px, 0, 0);
+          }
+        }
+      }
+    }
+  }
+
+  .alerts-stats-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+
+    article#alerts {
+      flex-basis: 45%;
+
+      div div {
+        @include functions.borderWithPaddingAndRadius(1px);
+
+        img[alt="location"] {
+          width: 1rem;
+        }
+      }
+    }
+  }
+
+  #general-info {
+    img[alt="Your Avatar"] {
+      width: 0.5rem;
+    }
+
+    dl {
+      margin-left: 2rem;
+    }
+
+    dt {
+      font-weight: bold;
+      padding: 0.5rem 0;
+    }
+  }
+}
